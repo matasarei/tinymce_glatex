@@ -17,3 +17,8 @@ Plugin automatically adds button to TinyMCE editors. You can change button posit
 
 ##Thanks to
 This plugin based on https://github.com/moonwave99/TinyMCELaTeXPlugin (by moonwave99)
+
+##Some screenshots
+![screenshot2](https://cloud.githubusercontent.com/assets/6638367/14512938/42f12b20-01ec-11e6-9c62-b0d0864987e1.png)
+![screenshot](https://cloud.githubusercontent.com/assets/6638367/14512939/45700a38-01ec-11e6-85e7-ca4978b26299.png)
+
