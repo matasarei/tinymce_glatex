@@ -27,39 +27,31 @@ require('../../../../../config.php');
 
 $PAGE->set_context(context_system::instance());
 $PAGE->set_url('/lib/editor/tinymce/plugins/glatex/glatex.php');
+$PAGE->set_title(get_string('title', 'tinymce_glatex'));
+$PAGE->set_pagelayout('popup');
 
 $editor = get_texteditor('tinymce');
 $plugin = $editor->get_plugin('glatex');
 
-// Prevent https security problems.
-$relroot = preg_replace('|^http.?://[^/]+|', '', $CFG->wwwroot);
+$PAGE->requires->js(new moodle_url($editor->get_tinymce_base_url().'/tiny_mce_popup.js'));
+$PAGE->requires->js(new moodle_url($plugin->get_tinymce_file_url('js/dialog.js')));
 
-$htmllang = get_html_lang();
-header('Content-Type: text/html; charset=utf-8');
-header('X-UA-Compatible: IE=edge');
+echo $OUTPUT->header();
 
 ?>
-<!DOCTYPE html>
-<html <?php echo $htmllang ?>>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title><?php print_string('title', 'tinymce_glatex')?></title>
-    <script type="text/javascript" src="<?php echo $editor->get_tinymce_base_url(); ?>tiny_mce_popup.js"></script>
-    <script type="text/javascript" src="<?php echo $plugin->get_tinymce_file_url('js/dialog.js'); ?>"></script>
-</head>
-<body>
-    <form onsubmit="LatexDialog.insert();return false;" action="#">
-        <p><?php print_string('pastecode', 'tinymce_glatex')?></p>
-        <p>
-            <input type="button" id="preview" name="preview" value="<?php print_string('preview', 'tinymce_glatex')?>"
-            onclick="LatexDialog.preview();" />
-        </p>
-        <p><img id="previewImg" src="" alt=""/></p>
-        <p><textarea name="latex_code" cols="100" rows="20"></textarea></p>
-        <div class="mceActionPanel">
-            <input type="button" id="insert" name="insert" value="{#insert}" onclick="LatexDialog.insert();" />
-            <input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
-        </div>
-    </form>
-</body>
-</html>
+<form onsubmit="LatexDialog.insert();return false;" action="#">
+    <p><?php print_string('pastecode', 'tinymce_glatex')?></p>
+    <p>
+        <input type="button" id="preview" name="preview" value="<?php print_string('preview', 'tinymce_glatex')?>"
+        onclick="LatexDialog.preview();" />
+    </p>
+    <p><img id="previewImg" src="" alt=""/></p>
+    <p><textarea name="latex_code" cols="98" rows="12"></textarea></p>
+    <div class="mceActionPanel">
+        <input type="button" id="insert" name="insert" value="{#insert}" onclick="LatexDialog.insert();" />
+        <input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+    </div>
+</form>
+<?php
+
+echo $OUTPUT->footer();
