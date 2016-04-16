@@ -46,7 +46,7 @@ echo $OUTPUT->header();
         onclick="LatexDialog.preview();" />
     </p>
     <p><img id="previewImg" src="" alt=""/></p>
-    <p><textarea name="latex_code" cols="98" rows="12"></textarea></p>
+    <p><textarea name="latex_code" style="width:610px; height:270px;"></textarea></p>
     <div class="mceActionPanel">
         <input type="button" id="insert" name="insert" value="{#insert}" onclick="LatexDialog.insert();" />
         <input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
