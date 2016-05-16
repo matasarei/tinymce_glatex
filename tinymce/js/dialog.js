@@ -1,8 +1,8 @@
 /*
- * TinyMCELatexPlugin - A plugin to write formulae in TinyMCE through Google APIs .
- * v1.0 - by Diego Caponera - http://www.diegocaponera.com/
- * MIT Licensed.
- */
+* TinyMCELatexPlugin - A plugin to write formulae in TinyMCE through Google APIs .
+* v1.0 - by Diego Caponera - http://www.diegocaponera.com/
+* MIT Licensed.
+*/
 
 tinyMCEPopup.requireLangPack();
 
@@ -28,9 +28,9 @@ var LatexDialog = {
 
 	preview : function() {
 
-		var latexCode = document.forms[0].latex_code.value
+		var latexCode = document.forms[0].latex_code.value;
 
-		if (document.forms[0].latex_code.value != ''){
+		if (document.forms[0].latex_code.value !== ''){
 
 			document.getElementById('previewImg').src = LatexDialog.getSrc(latexCode);
 
