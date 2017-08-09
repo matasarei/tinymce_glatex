@@ -28,12 +28,12 @@
 defined('MOODLE_INTERNAL') || die();
 
 // The current plugin version (Date: YYYYMMDDXX).
-$plugin->version   = 2016041600;
+$plugin->version   = 2016041602;
 // Required Moodle version.
 $plugin->requires  = 2012112900;
 // Release type.
 $plugin->maturity = MATURITY_STABLE;
 // Version in human readable format.
-$plugin->release = '1.0.2';
+$plugin->release = '1.0.3';
 // Full name of the plugin (used for diagnostics).
 $plugin->component = 'tinymce_glatex';

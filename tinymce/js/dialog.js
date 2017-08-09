@@ -28,6 +28,7 @@ var LatexDialog = {
 
 	preview : function() {
 
+		console.log(document.forms[0]);
 		var latexCode = document.forms[0].latex_code.value;
 
 		if (document.forms[0].latex_code.value !== ''){

@@ -28,7 +28,7 @@ require('../../../../../config.php');
 $PAGE->set_context(context_system::instance());
 $PAGE->set_url('/lib/editor/tinymce/plugins/glatex/glatex.php');
 $PAGE->set_title(get_string('title', 'tinymce_glatex'));
-$PAGE->set_pagelayout('popup');
+$PAGE->set_pagelayout('embedded');
 
 $editor = get_texteditor('tinymce');
 $plugin = $editor->get_plugin('glatex');
@@ -45,8 +45,10 @@ echo $OUTPUT->header();
         <input type="button" id="preview" name="preview" value="<?php print_string('preview', 'tinymce_glatex')?>"
         onclick="LatexDialog.preview();" />
     </p>
-    <p><img id="previewImg" src="" alt=""/></p>
-    <p><textarea name="latex_code" style="width:610px; height:270px;"></textarea></p>
+    <p class="glatex-preview" title="<?php echo get_string('preview', 'tinymce_glatex'); ?>">
+        <img id="previewImg" src="" alt=""/>
+    </p>
+    <p><textarea name="latex_code" id="glatex_input"></textarea></p>
     <div class="mceActionPanel">
         <input type="button" id="insert" name="insert" value="{#insert}" onclick="LatexDialog.insert();" />
         <input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
