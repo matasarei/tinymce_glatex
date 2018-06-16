@@ -10,7 +10,7 @@ Moodle plugin to write formulae in TinyMCE through Google APIs
 * Totally free, no limits.
 
 ## How to install
-Just copy plugin files into /lib/editor/tinymce/plugins/glatex/ and navigate to /admin/index.php .
+Just copy plugin files into <moodle_dir>/lib/editor/tinymce/plugins/glatex/ and navigate to /admin/index.php .
 
 ## Editor button
 Plugin automatically adds button to TinyMCE editors. You can change button position using 'glatex' keyword (...charmap, glatex, ...).
