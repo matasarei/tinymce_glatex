@@ -27,8 +27,8 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Google API based LaTeX pulugin for TinyMCE
  */
-class tinymce_glatex extends editor_tinymce_plugin {
-
+class tinymce_glatex extends editor_tinymce_plugin
+{
     /**
      * @var array list of buttons defined by this plugin
      */
@@ -36,14 +36,17 @@ class tinymce_glatex extends editor_tinymce_plugin {
 
     /**
      * Update editor params on init
+     *
+     * @param array $params
+     * @param context $context
+     * @param array|null $options
      */
-    protected function update_init_params(array &$params, context $context, array $options = null) {
-
+    protected function update_init_params(array &$params, context $context, array $options = null)
+    {
         // Add button to the editor.
         $this->add_button_after($params, $this->count_button_rows($params), 'glatex');
 
         // Add JS file, which uses default name.
         $this->add_js_plugin($params);
-
     }
 }

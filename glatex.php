@@ -33,27 +33,27 @@ $PAGE->set_pagelayout('embedded');
 $editor = get_texteditor('tinymce');
 $plugin = $editor->get_plugin('glatex');
 
-$PAGE->requires->js(new moodle_url($editor->get_tinymce_base_url().'/tiny_mce_popup.js'));
+$PAGE->requires->js(new moodle_url($editor->get_tinymce_base_url() . '/tiny_mce_popup.js'));
 $PAGE->requires->js(new moodle_url($plugin->get_tinymce_file_url('js/dialog.js')));
 
 echo $OUTPUT->header();
 
 ?>
-<form onsubmit="LatexDialog.insert();return false;" action="#">
-    <p><?php print_string('pastecode', 'tinymce_glatex')?></p>
-    <p>
-        <input type="button" id="preview" name="preview" value="<?php print_string('preview', 'tinymce_glatex')?>"
-        onclick="LatexDialog.preview();" />
-    </p>
-    <p class="glatex-preview" title="<?php echo get_string('preview', 'tinymce_glatex'); ?>">
-        <img id="previewImg" src="" alt=""/>
-    </p>
-    <p><textarea name="latex_code" id="glatex_input"></textarea></p>
-    <div class="mceActionPanel">
-        <input type="button" id="insert" name="insert" value="{#insert}" onclick="LatexDialog.insert();" />
-        <input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
-    </div>
-</form>
+    <form onsubmit="LatexDialog.insert();return false;" action="#">
+        <p><?php print_string('pastecode', 'tinymce_glatex') ?></p>
+        <p>
+            <input type="button" id="preview" name="preview" value="<?php print_string('preview', 'tinymce_glatex') ?>"
+                   onclick="LatexDialog.preview();"/>
+        </p>
+        <p class="glatex-preview" title="<?php echo get_string('preview', 'tinymce_glatex'); ?>">
+            <img id="previewImg" src="" alt=""/>
+        </p>
+        <p><textarea name="latex_code" id="glatex_input"></textarea></p>
+        <div class="mceActionPanel">
+            <input type="button" id="insert" name="insert" value="{#insert}" onclick="LatexDialog.insert();"/>
+            <input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();"/>
+        </div>
+    </form>
 <?php
 
 echo $OUTPUT->footer();

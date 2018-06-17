@@ -27,13 +27,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-// The current plugin version (Date: YYYYMMDDXX).
-$plugin->version   = 2017080900;
-// Required Moodle version.
-$plugin->requires  = 2012112900;
-// Release type.
-$plugin->maturity = MATURITY_STABLE;
-// Version in human readable format.
-$plugin->release = '1.0.3';
-// Full name of the plugin (used for diagnostics).
-$plugin->component = 'tinymce_glatex';
+$plugin->version = 2017080900; // The current plugin version (Date: YYYYMMDDXX).
+$plugin->requires = 2012112900; // Required Moodle version.
+$plugin->maturity = MATURITY_STABLE; // Release type.
+$plugin->release = '1.0.5'; // Version in human readable format.
+$plugin->component = 'tinymce_glatex'; // Full name of the plugin (used for diagnostics).
