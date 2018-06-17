@@ -1,7 +1,3 @@
-/**
- * glatex styles
- */
-
 #glatex_input {
     width: 100%;
     box-sizing: border-box;
@@ -20,4 +16,9 @@
 #insert, #cancel {
     color: #000 !important;
     font-size: 13px;
+}
+
+span.mce_glatex img {
+    width: 100%;
+    display: block;
 }
